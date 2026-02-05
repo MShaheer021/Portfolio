@@ -1,6 +1,6 @@
 import React from "react";
 import { Link as ScrollLink } from "react-scroll";
-import { FiDownload } from "react-icons/fi";
+import { FiDownload, FiMoon, FiSun } from "react-icons/fi";
 import { portfolioData } from "../data/portfolioData";
 
 const navItems = [
@@ -14,7 +14,9 @@ const navItems = [
   { label: "Contact", to: "contact" },
 ];
 
-export default function Navbar() {
+export default function Navbar({ theme, toggleTheme }) {
+  const isDark = theme === "dark";
+
   return (
     <header className="sticky top-0 z-50 dark:border-white/10 border-slate-300/20 dark:backdrop-blur dark:bg-slate-950/60 backdrop-blur bg-white/80">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
@@ -48,6 +50,14 @@ export default function Navbar() {
             <FiDownload />
             Resume
           </a>
+          <button
+            type="button"
+            onClick={toggleTheme}
+            aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            className="inline-flex items-center justify-center rounded-xl border border-slate-300/40 px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-900/5 dark:border-white/10 dark:text-slate-200 dark:hover:bg-white/5"
+          >
+            {isDark ? <FiSun /> : <FiMoon />}
+          </button>
         </div>
       </div>
     </header>
