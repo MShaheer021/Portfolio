@@ -2,14 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import { portfolioData } from "../data/portfolioData";
-import { FiMail, FiPhone, FiArrowRight } from "react-icons/fi";
+import { FiMail, FiPhone, FiArrowRight, FiGithub } from "react-icons/fi";
 import {
   SiReact,
   SiTailwindcss,
   SiJavascript,
   SiGit,
   SiFigma,
-  SiVite,
+  SiMui,
 } from "react-icons/si";
 
 const FloatingCard = ({ delay = 0, icon: Icon, label }) => (
@@ -221,7 +221,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="dark:text-slate-300 text-slate-700"
             >
-              I craft digital experiences
+              I build responsive web interfaces
             </motion.span>
           </motion.h1>
 
@@ -273,13 +273,17 @@ export default function Hero() {
             </motion.a>
           </motion.div>
 
+          <a href={portfolioData.githubUrl} target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-2 text-blue-400 hover:text-blue-300">
+            <FiGithub /> Explore my GitHub
+          </a>
+
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-8 flex flex-col sm:flex-row gap-6 text-sm"
+            className="mt-8 flex flex-col xl:flex-row gap-4 text-sm"
           >
             <motion.a
               href={`mailto:${portfolioData.email}`}
@@ -347,7 +351,7 @@ export default function Hero() {
               <FloatingCard delay={0.2} icon={SiJavascript} label="JavaScript" />
               <FloatingCard delay={0.3} icon={SiGit} label="Git" />
               <FloatingCard delay={0.4} icon={SiFigma} label="Figma" />
-              <FloatingCard delay={0.5} icon={SiVite} label="Vite" />
+              <FloatingCard delay={0.5} icon={SiMui} label="Material UI" />
             </div>
 
             <motion.a

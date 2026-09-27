@@ -5,30 +5,6 @@ import { portfolioData } from "../data/portfolioData";
 import { motion } from "framer-motion";
 import { FiZap, FiCheck } from "react-icons/fi";
 
-// Categorized skills
-const skillCategories = [
-  {
-    name: "Frontend",
-    icon: "🎨",
-    skills: ["React JS", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap", "Material UI"],
-  },
-  {
-    name: "Design & Tools",
-    icon: "🎭",
-    skills: ["Figma", "Canva", "UI/UX Design", "Responsive Design", "Cross-Browser Compatibility"],
-  },
-  {
-    name: "Professional",
-    icon: "💼",
-    skills: ["Teamwork", "Project Management", "Performance Optimization", "Effective Communication"],
-  },
-  {
-    name: "Other",
-    icon: "🚀",
-    skills: ["Data Entry", "Git", "Version Control"],
-  },
-];
-
 const SkillCard = ({ name, icon, skills, delay }) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
@@ -152,7 +128,7 @@ export default function Skills() {
 
       {/* Skills by Category */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-        {skillCategories.map((category, idx) => (
+        {portfolioData.skillCategories.map((category, idx) => (
           <SkillCard
             key={category.name}
             name={category.name}
@@ -205,42 +181,6 @@ export default function Skills() {
         </div>
       </motion.div>
 
-      {/* Experience Level Indicator */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="mt-10 grid md:grid-cols-2 gap-6"
-      >
-        {[
-          { title: "Frontend Expertise", level: 95 },
-          { title: "Responsiveness & UX", level: 90 },
-        ].map((item) => (
-          <div
-            key={item.title}
-            className="group rounded-2xl dark:bg-slate-800/40 bg-slate-100/40 dark:border-slate-700/50 border-slate-300/40 border backdrop-blur-xl p-6"
-          >
-            <div className="flex justify-between items-center mb-3">
-              <h4 className="font-semibold dark:text-white text-slate-900">
-                {item.title}
-              </h4>
-              <span className="text-sm font-bold dark:text-blue-400 text-blue-600">
-                {item.level}%
-              </span>
-            </div>
-            <div className="relative h-3 rounded-full dark:bg-slate-700/50 bg-slate-300/50 overflow-hidden">
-              <motion.div
-                initial={{ width: 0 }}
-                whileInView={{ width: `${item.level}%` }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.3 }}
-                className="h-full dark:bg-linear-to-r dark:from-blue-500 dark:to-indigo-500 from-blue-400 to-indigo-400 rounded-full"
-              />
-            </div>
-          </div>
-        ))}
-      </motion.div>
     </section>
   );
 }

@@ -1,114 +1,75 @@
+const skillCategories = [
+  { name: "Front-End & UI", icon: "🎨", skills: ["HTML5", "CSS3", "JavaScript", "React.js", "Bootstrap", "Tailwind CSS", "Material UI", "Responsive Web Design"] },
+  { name: "Tools & Development", icon: "🛠️", skills: ["Git", "GitHub", "Figma", "Canva", "Reusable Components", "Dashboard Development", "UI Implementation"] },
+  { name: "Creative & Professional", icon: "📷", skills: ["Photography", "Photoshoots", "Basic Video Editing", "Teamwork", "Communication"] },
+  { name: "Languages", icon: "💬", skills: ["English (Fluent)", "Urdu (Fluent)", "Punjabi (Conversational)"] },
+];
+
 export const portfolioData = {
   name: "Muhammad Shaheer",
-  role: "Front-End Developer",
+  role: "Front-End Developer | React.js Developer",
   phone: "+92-313-4840151",
   email: "muhammadshaheer2002@gmail.com",
-  locationNote: "Pakistan",
-  resumeUrl: "https://drive.google.com/uc?id=1wZzsS9D-zKIp3Wl4jXO87uBZ3GWlMhB0&export=download", // ✅ resume download link
-
-  summary:
-    "Creative Front-End Web Developer skilled in HTML, CSS, JavaScript and React JS with expertise in building responsive, user-friendly interfaces. Strong in performance optimization, cross-browser compatibility, and collaborating with designers and backend teams.",
-
-  skills: [
-    "React JS","JavaScript","HTML5","CSS3","Bootstrap","Tailwind CSS","Material UI",
-    "Teamwork","Project Management","Performance Optimization","Cross-Browser Compatibility",
-    "Figma (Basic)","Canva (Basic)","Data Entry","Effective Communication",
-  ],
-
-  experience: [
-    {
-      title: "Front-End Web Developer Intern",
-      company: "Cognixia Tech",
-      year: "2025",
-      points: [
-        "Designed and developed a responsive company dashboard and a service showcase website.",
-        "Collaborated on UI/UX using Figma, translating designs into interactive and user-friendly interfaces.",
-        "Improved user experience and brand presence through optimized front-end development.",
-      ],
-    },
-  ],
-
+  locationNote: "Lahore, Pakistan",
+  githubUrl: "https://github.com/MShaheer021",
+  resumeUrl: "/Muhammad_Shaheer_CV.pdf",
+  summary: "Computer Science student and Front-End Developer building responsive, interactive web interfaces with React.js, JavaScript, Bootstrap, Tailwind CSS, and Material UI. I turn Figma designs into functional interfaces, develop dashboards, and optimize layouts for desktop and mobile. Currently, I contribute to Jaiza, a hyperlocal business discovery and verified-review platform, as its Front-End Developer.",
+  skillCategories,
+  skills: skillCategories.slice(0, 3).flatMap((category) => category.skills),
+  experience: [{
+    title: "Front-End Developer — Jaiza",
+    company: "Final Year Project · Four-member team",
+    year: "2026 - Present",
+    live: "https://www.jaiza.site/",
+    points: [
+      "Contributing as the Front-End Developer to Jaiza, a hyperlocal business discovery and verified-review platform, within a four-member Final Year Project team.",
+      "Developing responsive and interactive interfaces for User, Business Owner, and Administrator dashboards.",
+      "Implementing front-end interactions for business discovery and map-based user experiences.",
+      "Integrating role-based platform functionality while maintaining consistent interfaces and usable layouts across desktop and mobile devices.",
+      "Contributing documentation visuals and refining responsiveness, usability, and map interactions.",
+    ],
+  }, {
+    title: "Front-End Web Developer Intern",
+    company: "Cognixia Tech",
+    year: "2025",
+    points: [
+      "Designed and developed responsive front-end interfaces for a company dashboard and service showcase website.",
+      "Converted Figma concepts into interactive, user-friendly web interfaces and reusable components.",
+      "Collaborated with team members to improve UI consistency, responsiveness, usability, and mobile optimization.",
+    ],
+  }],
   education: [
-    {
-      institute: "University of Management And Technology",
-      degree: "BS Computer Science",
-      years: "2022 - Present",
-    },
-    {
-      institute: "WebDevrs Academy",
-      degree: "Front-End Developer Course",
-      years: "2022 - 2023",
-    },
-    {
-      institute: "Lahore Graphics School",
-      degree: "Graphic Designer Course",
-      years: "2023",
-    },
-    {
-      institute: "Crescent College",
-      degree: "Intermediate (ICS)",
-      years: "2020 - 2022",
-    },
-    {
-      institute: "Crescent Model High Secondary School",
-      degree: "Matric (Computer)",
-      years: "2018 - 2020",
-    },
+    { institute: "University of Management and Technology", degree: "Bachelor of Science in Computer Science", years: "2022 - Present", details: "Lahore, Pakistan. Final Year Project: Jaiza — Hyperlocal Business Discovery & Verified Review Platform." },
+    { institute: "Crescent College", degree: "Intermediate in Computer Science (ICS)", years: "2020 - 2022" },
+    { institute: "Crescent Model Higher Secondary School", degree: "Matriculation — Computer Science", years: "2018 - 2020" },
   ],
-
-  // ✅ Add categories for filtering: "React", "UI", "Dashboards"
+  training: [{ institute: "Web Devrs", degree: "MERN Stack Development", years: "2023 - 2024" }],
   projects: [
     {
-      title: "Cognixia Dashboard",
-      desc: "Responsive ticket management system dashboard UI with reusable components and clean layout.",
-      tech: ["React", "Figma", "Tailwind","Bootstrap", "Framer Motion"],
+      title: "Jaiza",
+      desc: "Hyperlocal business discovery and verified-review platform. As the Front-End Developer in a four-member final-year project team, I develop responsive User, Business Owner, and Administrator dashboards, business-discovery interfaces, and map-based interactions. My work includes interface consistency, usability, documentation visuals, and integration of role-based functionality.",
+      period: "2026 - Present · Final Year Project",
+      tech: ["Responsive Interfaces", "Role-Based Dashboards", "Map Interactions"],
       category: "Dashboards",
-      live: "https://example.com",
-    //   code: "https://github.com/",
+      live: "https://www.jaiza.site/",
     },
     {
-      title: "Showcase Website",
-      desc: "Modern landing page and responsiveness.",
-      tech: ["React", "Bootstrap", "Framer Motion"],
-      category: "UI",
-      // live: "https://example.com",
-      code: "https://github.com/MShaheer021/Sub-Menu",
+      title: "Cognixia Company Dashboard",
+      desc: "Responsive company dashboard interfaces built during my internship at Cognixia Tech, translating Figma concepts into reusable components with consistent layouts and mobile-friendly interactions.",
+      period: "2025 · Cognixia Tech Internship",
+      tech: ["Figma", "Reusable Components", "Responsive Design"],
+      category: "Dashboards",
     },
     {
-      title: "React Portfolio",
-      desc: "Portfolio site with animations, filters, blog and resume download.",
-      tech: ["React", "Tailwind", "EmailJS"],
-      category: "React",
-      live: "https://example.com",
-    //   code: "https://github.com/",
+      title: "Service Showcase Website",
+      desc: "A service showcase website developed during my Cognixia Tech internship, with interactive front-end interfaces and a focus on usability, UI consistency, and desktop and mobile optimization.",
+      period: "2025 · Cognixia Tech Internship",
+      tech: ["UI Implementation", "Responsive Design", "Mobile Optimization"],
+      category: "Websites",
     },
   ],
-
-  // ✅ Blog (JSON-based)
-  blogPosts: [
-    {
-      id: "react-performance",
-      title: "React Performance Tips I Actually Use",
-      date: "2026-01-15",
-      tags: ["React", "Performance"],
-      excerpt: "How I reduce re-renders, split components, and keep UI snappy on real projects.",
-      content: [
-        "I start with profiling (React DevTools) to find the actual bottleneck.",
-        "Then I split heavy components and memoize stable parts using React.memo/useMemo.",
-        "For large lists, virtualization and pagination helps a lot.",
-      ],
-    },
-    {
-      id: "tailwind-layouts",
-      title: "Building Clean Layouts with Tailwind",
-      date: "2026-01-10",
-      tags: ["Tailwind", "UI"],
-      excerpt: "My go-to layout patterns for responsive sections and reusable components.",
-      content: [
-        "Use max-w containers, consistent paddings, and grid for structure.",
-        "Prefer small utility groups and extract repeated blocks into components.",
-        "Always test mobile first, then scale up with md/lg.",
-      ],
-    },
+  creativeExperience: [
+    { title: "Photography & Photoshoots", description: "Practical experience in composition, framing, subject positioning, and preparing photographs for digital and social-media use." },
+    { title: "Basic Video Editing", description: "Beginner-level experience with cutting, trimming, transitions, audio synchronization, and simple visual adjustments." },
   ],
 };

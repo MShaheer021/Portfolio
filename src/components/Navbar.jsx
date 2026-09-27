@@ -10,7 +10,7 @@ const navItems = [
   { label: "Experience", to: "experience" },
   { label: "Education", to: "education" },
   { label: "Projects", to: "projects" },
-  { label: "Blog", to: "blog" },       // ✅ added
+  { label: "Creative", to: "creative" },
   { label: "Contact", to: "contact" },
 ];
 
@@ -23,7 +23,7 @@ export default function Navbar() {
           <span className="dark:text-slate-400 text-slate-500">.dev</span>
         </div>
 
-        <nav className="hidden md:flex items-center gap-6 text-sm dark:text-slate-300 text-slate-700">
+        <nav className="hidden lg:flex items-center gap-4 text-sm dark:text-slate-300 text-slate-700">
           {navItems.map((item) => (
             <ScrollLink
               key={item.to}

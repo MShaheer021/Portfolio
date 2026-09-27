@@ -23,8 +23,8 @@ export default function Experience() {
 
       <SectionTitle
         eyebrow="Experience"
-        title="Where I've worked"
-        subtitle="A timeline of my professional journey and key achievements."
+        title="Work & project experience"
+        subtitle="My current final-year project and professional internship experience."
       />
 
       <Timeline
@@ -36,6 +36,16 @@ export default function Experience() {
               <div className="flex flex-col">
                 <span className="font-bold dark:text-white text-slate-900 text-lg">{job.title}</span>
                 <span className="dark:text-slate-400 text-slate-600 text-sm">{job.company}</span>
+                {job.live && (
+                  <a
+                    href={job.live}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-2 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline"
+                  >
+                    Visit Jaiza ↗
+                  </a>
+                )}
               </div>
             </div>
           </div>
@@ -53,8 +63,8 @@ export default function Experience() {
         className="mt-16 grid md:grid-cols-2 gap-6"
       >
         {[
-          { icon: "🎯", label: "Role", value: "Frontend Developer" },
-          { icon: "🚀", label: "Projects", value: "3 Completed" },
+          { icon: "🎯", label: "Role", value: "Front-End Developer" },
+          { icon: "🚀", label: "Current Project", value: "Jaiza · Final Year Project" },
         ].map((stat) => (
           <motion.div
             key={stat.label}

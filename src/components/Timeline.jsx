@@ -86,10 +86,10 @@ function Timeline({ items, renderTitle, renderMeta, renderBody }) {
                   transition={{ duration: 0.5, delay: idx * 0.15 + 0.2 }}
                   className="dark:text-slate-300 text-slate-700"
                 >
-                  <ul className="space-y-2">
+                  <div className="space-y-2">
                     {Array.isArray(item.points) ? (
                       item.points.map((p, i) => (
-                        <motion.li
+                        <motion.div
                           key={i}
                           initial={{ opacity: 0, x: -10 }}
                           whileInView={{ opacity: 1, x: 0 }}
@@ -106,12 +106,12 @@ function Timeline({ items, renderTitle, renderMeta, renderBody }) {
                           <span className="group-hover/item:dark:text-blue-300 group-hover/item:text-blue-600 transition-colors">
                             {p}
                           </span>
-                        </motion.li>
+                        </motion.div>
                       ))
                     ) : (
-                      <p>{renderBody(item)}</p>
+                      renderBody(item)
                     )}
-                  </ul>
+                  </div>
                 </motion.div>
               </div>
 

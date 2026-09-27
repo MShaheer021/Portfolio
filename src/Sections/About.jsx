@@ -68,9 +68,9 @@ export default function About() {
         transition={{ duration: 0.6 }}
         className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10"
       >
-        <StatCard delay={0} icon={FiCode} label="Projects" value="5+" />
-        <StatCard delay={0.1} icon={FiTarget} label="Focus" value="UI/UX" />
-        <StatCard delay={0.2} icon={FiAward} label="Exp." value="2+ yrs" />
+        <StatCard delay={0} icon={FiCode} label="Featured Work" value={String(portfolioData.projects.length)} />
+        <StatCard delay={0.1} icon={FiTarget} label="Focus" value="React.js" />
+        <StatCard delay={0.2} icon={FiAward} label="Internship" value="2025" />
         <StatCard delay={0.3} icon={FiUser} label="Role" value="Frontend" />
       </motion.div>
 
@@ -111,9 +111,9 @@ export default function About() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mt-6 dark:text-slate-400 text-slate-600 leading-relaxed"
             >
-              I enjoy turning designs into real products, keeping UX smooth, and
-              ensuring websites look great on every screen size. My approach combines
-              technical expertise with creative problem-solving.
+              I am pursuing a BS in Computer Science at the University of Management
+              and Technology in Lahore. In a four-member final-year project team,
+              I build Jaiza’s dashboards and map-based business discovery interfaces.
             </motion.p>
             <motion.p
               initial={{ opacity: 0 }}
@@ -122,8 +122,8 @@ export default function About() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="mt-6 dark:text-slate-400 text-slate-600 leading-relaxed"
             >
-              When I&apos;m not coding, I&apos;m learning new technologies, exploring design trends,
-              and contributing to open-source projects.
+              My creative experience includes photography, photoshoots, and basic video
+              editing, from composition and framing to trimming and audio synchronization.
             </motion.p>
           </div>
         </motion.div>
@@ -169,7 +169,7 @@ export default function About() {
                   <span className="dark:text-slate-500 text-slate-600 text-sm font-medium">
                     {item.label}
                   </span>
-                  <span className="dark:text-slate-200 text-slate-800 text-sm font-semibold truncate group-hover/item:text-blue-500">
+                  <span className="dark:text-slate-200 text-slate-800 text-sm font-semibold text-right break-all group-hover/item:text-blue-500">
                     {item.value}
                   </span>
                 </motion.div>

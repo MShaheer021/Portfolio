@@ -2,9 +2,9 @@ import React, { useMemo, useState } from "react";
 import SectionTitle from "../components/SectionTitle";
 import { portfolioData } from "../data/portfolioData";
 import { motion } from "framer-motion";
-import { FiExternalLink, FiGithub } from "react-icons/fi";
+import { FiExternalLink } from "react-icons/fi";
 
-const FILTERS = ["All", "React", "UI", "Dashboards"];
+const FILTERS = ["All", ...new Set(portfolioData.projects.map((project) => project.category))];
 
 export default function Projects() {
   const [active, setActive] = useState("All");
@@ -109,6 +109,8 @@ export default function Projects() {
                 </motion.span>
               </div>
 
+              <p className="mb-3 text-sm text-blue-400">{p.period}</p>
+
               {/* Description */}
               <motion.p
                 initial={{ opacity: 0 }}
@@ -147,7 +149,7 @@ export default function Projects() {
                 transition={{ duration: 0.4, delay: idx * 0.08 + 0.3 }}
                 className="flex gap-3 mt-auto"
               >
-                <motion.a
+                {p.live && <motion.a
                   href={p.live}
                   target="_blank"
                   rel="noreferrer"
@@ -156,8 +158,8 @@ export default function Projects() {
                   className="flex-1 rounded-xl dark:bg-blue-600 bg-blue-500 text-white px-4 py-2.5 text-sm font-semibold flex items-center justify-center gap-2 dark:hover:bg-blue-700 hover:bg-blue-600 transition-all"
                 >
                   <FiExternalLink size={16} />
-                  Live
-                </motion.a>
+                  Visit Project
+                </motion.a>}
               </motion.div>
             </div>
 

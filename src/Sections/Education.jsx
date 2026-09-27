@@ -99,45 +99,15 @@ export default function Education() {
         )}
       />
 
-      {/* Education Stats */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7, delay: 0.3 }}
-        className="mt-16 grid md:grid-cols-2 gap-6 max-w-2xl mx-auto"
-      >
-        {[
-          { icon: "🏆", label: "Certifications", value: "Multiple Courses" },
-          { icon: "📚", label: "Learning Focus", value: "Web Development" },
-        ].map((stat) => (
-          <motion.div
-            key={stat.label}
-            whileHover={{ y: -8, scale: 1.05 }}
-            className="group relative overflow-hidden rounded-2xl dark:bg-slate-800/40 bg-slate-100/40 dark:border-slate-700/50 border-slate-300/40 border backdrop-blur-xl p-6 text-center transition-all duration-300"
-          >
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileHover={{ opacity: 1 }}
-              className="absolute inset-0 dark:bg-linear-to-br dark:from-purple-600/10 dark:to-blue-600/10 from-purple-400/10 to-blue-400/10 pointer-events-none rounded-2xl"
-            />
-            <div className="relative z-10">
-              <motion.div
-                animate={{ scale: [1, 1.15, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="text-4xl mb-3"
-              >
-                {stat.icon}
-              </motion.div>
-              <p className="dark:text-slate-400 text-slate-600 text-sm mb-1">{stat.label}</p>
-              <p className="dark:text-white text-slate-900 text-lg font-bold">{stat.value}</p>
-            </div>
-
-            {/* Corner accent light */}
-            <div className="absolute top-0 right-0 w-20 h-20 dark:bg-purple-500/10 bg-purple-400/10 rounded-full blur-2xl group-hover:dark:bg-purple-500/20 group-hover:bg-purple-400/20 transition-all duration-300" />
-          </motion.div>
-        ))}
-      </motion.div>
+      <div className="mt-12">
+        <SectionTitle eyebrow="Training" title="Professional training" subtitle="Focused learning in web development." />
+        <Timeline
+          items={portfolioData.training}
+          renderTitle={(course) => course.degree}
+          renderMeta={(course) => course.years}
+          renderBody={(course) => <p>{course.institute}</p>}
+        />
+      </div>
     </section>
   );
 }
